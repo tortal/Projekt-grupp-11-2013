@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="se.chalmers.fonahano.quizwalk"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <!-- Android API v2 Key -->
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="AIzaSyDRPZc9dBBl_SV-Rx4P_3N8WZmUIAsWHr4" />
+
+    <permission
+        android:name="se.chalmers.fonahano.quizwalk.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="se.chalmers.fonahano.quizwalk.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/quiz_walk"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.QuizWalkActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.GameMenuActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="temp.activities.TemporaryProximityActivity"
+            android:label="@string/title_activity_temporary_proximity"
+            android:parentActivityName="se.chalmers.fonahano.quizwalk.presentation.QuizWalkActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="se.chalmers.it12.tda367.vt13.grp11.quizwalk.activities.QuizWalkActivity" />
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.QuizWalkManagerActivity"
+            android:label="@string/title_activity_quiz_walk_manager"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.EditQuizWalkGameActivity"
+            android:label="@string/title_activity_edit_quiz_walk_game"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.DebugActivity"
+            android:label="@string/title_activity_debug"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- Android API v2 Key -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDRPZc9dBBl_SV-Rx4P_3N8WZmUIAsWHr4" />
+
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.RegisterUserActivity"
+            android:label="@string/title_activity_register_user"
+            android:parentActivityName="se.chalmers.fonahano.quizwalk.presentation.LoginActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:screenOrientation="portrait"
+                android:value="se.chalmers.fonahano.quizwalk.activities.LoginActivity" />
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.LauncherActivity"
+            android:label="@string/quiz_walk"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.CompletedQuizWalkActivity"
+            android:label="@string/title_activity_completed_quiz_walk" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="se.chalmers.fonahano.quizwalk.presentation.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+    </application>
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Tests"
+        android:targetPackage="se.chalmers.fonahano.quizwalk" />
+
+</manifest>
